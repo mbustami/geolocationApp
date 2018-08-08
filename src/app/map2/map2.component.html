@@ -1,0 +1,122 @@
+<div class="container">
+	<div class="app-wrapper">
+		<header class="header">
+			<div class="header__left">
+				<div class="header__icon">
+					<span class="icon icon-my_location"></span>
+				</div>
+				<div class="header__info">
+					<p class="header__info--label">Your Location</p>
+					<p class="header__info--location">{{ address }}</p>
+				</div>
+				<span class="icon icon-swap"></span>
+			</div>
+			<div class="header__right"></div>
+		</header>
+
+		<section class="content">
+			<div class="content__info">
+
+				<ngb-accordion [closeOthers]="true" activeIds="static-1">
+				  <ngb-panel id="static-1">
+				  	<ng-template ngbPanelTitle>
+				      <div class="content__info__title">
+				      	<span class="icon icon-my_location"></span>
+				      	<span class="title">According to current location</span>
+				      </div>
+				    </ng-template>
+				    <ng-template ngbPanelContent>
+				    	<div class="content__info__body">
+				    		<div class="content__info__body--header">My Location</div>
+
+				    		<div class="content__info__body--content">
+				    			<div class="left">
+				    				<span class="icon icon-location-pin"></span>
+				    			</div>
+				    			<div class="right">
+				    				<div class="content-piece">{{ address }}</div>
+				    				<div class="inner">
+				    					<div class="content-piece">{{ lat }}<span class="coords">Latitude</span></div>
+				    					<div class="content-piece">{{ lng }}<span class="coords">Longitude</span></div>
+				    				</div>
+			    				</div>
+				    		</div>
+
+				    		<div class="content__info__body--content">
+				    			<div class="left">
+				    				<span class="icon icon-check-square"></span>
+				    			</div>
+				    			<div class="right">
+				    				<div class="content-piece">{{ closest?.name }}</div>
+				    				<div class="inner">
+				    					<div class="content-piece">{{ closest?.distance }} km<span class="label label-success">Closest</span>
+				    					<span class="coords">Distance</span></div>
+				    				</div>
+			    				</div>
+				    		</div>
+
+				    	</div>
+				    </ng-template>
+				  </ngb-panel>
+				  <ngb-panel id="static-2">
+				    <ng-template ngbPanelTitle>
+				      <div class="content__info__title new-location">
+				      	<span class="icon icon-my_location"></span>
+				      	<span class="title">According to other destination</span>
+			      	</div>
+				    </ng-template>
+				    <ng-template ngbPanelContent>
+				    	<div class="content__info__body new-location">
+								<div class="content__info__body--header">Enter new Location</div>
+
+				    		<div class="content__info__body--content">
+				    			<div class="left">
+				    				<span class="icon icon-my_location"></span>
+				    			</div>
+				    			<div class="right">
+				    				<div class="input-field">
+					    				<input type="text" name="newLocation" id="newLocation" class="location" #address required
+					    					(keyup.enter)="getLocation(address)"/>
+					    				<label for="newLocation">Location</label>
+				    				</div>
+			    				</div>
+				    		</div>
+
+				    		<div class="content__info__body--content" *ngIf="newClosest">
+				    			<div class="left">
+				    				<span class="icon icon-location-pin"></span>
+				    			</div>
+				    			<div class="right">
+				    				<div class="content-piece">{{ newAddress }}</div>
+				    				<div class="inner">
+				    					<div class="content-piece">{{ newLat }}<span class="coords">Latitude</span></div>
+				    					<div class="content-piece">{{ newLng }}<span class="coords">Longitude</span></div>
+				    				</div>
+			    				</div>
+				    		</div>
+
+								<div class="content__info__body--content" *ngIf="newClosest">
+				    			<div class="left">
+				    				<span class="icon icon-check-square"></span>
+				    			</div>
+				    			<div class="right">
+				    				<div class="content-piece">{{ newClosest?.name }}</div>
+				    				<div class="inner">
+				    					<div class="content-piece">{{ newClosest?.distance }} km<span class="label label-success">Closest</span>
+				    					<span class="coords">Distance</span></div>
+				    				</div>
+			    				</div>
+				    		</div>
+
+				    	</div>
+				    </ng-template>
+				  </ngb-panel>
+				</ngb-accordion>
+
+			</div>
+			<div class="content__map">
+				<div id="map"></div>
+			</div>
+		</section>
+	</div>
+</div>
