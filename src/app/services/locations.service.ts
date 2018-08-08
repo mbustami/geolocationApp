@@ -8,7 +8,7 @@ export class LocationsService {
 
   constructor(private _http: Http) { }
 
-  // returning a static array for the 5 locations
+  // returning a static array of objects for the 5 locations (dummy data to initialize the app)
   getLocations() {
 
   	return [

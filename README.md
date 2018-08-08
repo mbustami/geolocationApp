@@ -1,5 +1,27 @@
 # GeolocationApp
 
+![alt text](https://github.com/mbustami/geolocationApp/blob/master/geolocationApp.png)
+
+* A web application that can find the closest destination among 5 locations from the users's current location
+(Given the latitude/longitude for the 5 locations).
+
+* The user can also insert his/her destination in the "According to other destination tab" and the app will also find 
+the closest one among the 5 locations to the users new destination.
+
+* The user's location and the 5 other destinations will be displayed on a google map.
+
+## UI
+
+The UI was built with Google Material Design in mind.
+No specifc libraries were used to achieve the Material Design look, it was achieved with pure CSS.
+
+## JS Libraries and APIs
+
+* Angular 5
+* Google maps API
+* Google maps Geocoding API
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.1.
 
 ## Development server
@@ -13,14 +35,6 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Further help
 
