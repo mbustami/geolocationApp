@@ -14,28 +14,28 @@ export class LocationsService {
   	return [
   		{
   			name: 'Address1',
-  			lat: 32.4862285,
-  			lng: 36.892096599999996
+  			lat: 41.87194,
+  			lng: 13.56738
   		},
   		{
   			name: 'Address2',
-  			lat: 31.5862285,
-  			lng: 35.892096599999997
+        lat: 41.37194,
+        lng: 13.66738
   		},
   		{
   			name: 'Address3',
-  			lat: 31.5862285,
-  			lng: 34.892096599999991
+  			lat: 0.00,
+  			lng: 0.00
   		},
   		{
   			name: 'Address4',
-  			lat: 31.5762285,
-  			lng: 34.492096599999999
+        lat: 0.00,
+        lng: 0.00
   		},
   		{
   			name: 'Address5',
-				lat: 37.5762285,
-  			lng: 37.492096599999999
+        lat: 0.00,
+        lng: 0.00
   		}
   	]
 
